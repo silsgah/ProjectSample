@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Parent Eye</string>
+    <string name="title_activity_technique3">Parent Eye App"</string>
+
+    <string name="cheese_ipsum">This is just some dummy data about the selected student of item from ther list of things in there
+        for one to see details.</string>
+    <string name="checkin">Checkin</string>
+
+    <string name="menu_night_mode">More</string>
+    <string name="menu_night_mode_system">Share</string>
+    <string name="menu_night_mode_day">Help</string>
+    <string name="menu_night_mode_night">Staff</string>
+    <string name="menu_night_mode_auto">Tutors</string>
+</resources>
