@@ -26,6 +26,7 @@ import android.widget.Adapter;
 import android.support.v7.widget.Toolbar;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -160,7 +161,6 @@ public class Main2Activity extends AppCompatActivity {
        /* adapter.addFragment(new CheeseListFragment(), "Messages");*/
         viewPager.setAdapter(adapter);
     }
-
     private void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -168,10 +168,36 @@ public class Main2Activity extends AppCompatActivity {
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         menuItem.setChecked(true);
                         mDrawerLayout.closeDrawers();
+                        int id = menuItem.getItemId();
+                        switch (id){
+                            case R.id.nav_home:
+                                Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_SHORT).show();
+                                mDrawerLayout.closeDrawers();
+                                break;
+                            case R.id.nav_messages:
+                                Intent intent = new Intent(getApplicationContext(), Main3Activity.class);
+                                startActivity(intent);
+                                break;
+                            case R.id.messg:
+                                Intent intent2 = new Intent(getApplicationContext(), Main4Activity.class);
+                                startActivity(intent2);
+                                mDrawerLayout.closeDrawers();
+                                break;
+                            case R.id.nav_discussion:
+                                Intent intent3 = new Intent(getApplicationContext(), Main5Activity.class);
+                                startActivity(intent3);
+                                mDrawerLayout.closeDrawers();
+                                break;
+                            case R.id.logout:
+                                finish();
+
+                        }
                         return true;
                     }
                 });
     }
+
+
     static class Adapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragments = new ArrayList<>();
         private final List<String> mFragmentTitles = new ArrayList<>();
